@@ -1,0 +1,222 @@
+- Nokta çarpımı çok yaygın bir kullanımdır.
+
+- Broadcasting(yayın) -> Numpy' nin farklı şekillerdeki dizilerle çalışmasına izin veren güçlü bir mekanizmadır. 
+
+- Numpy -> Python' daki bilimsel hesaplamanın temel kütüphanesidir.
+
+- (Data Science, 
+- Machine Learning, 
+- Deep Learning ile herhangi bir şey yapmak için çok önemli)
+
+- Bir çok bilindik makine öğrenim kütüphanesinin temel paketidir.
+- Bunlar:
+
+- matplotlib -> psişik öğrenmesinin özüdür. gibi...
+
+- Bunlar matematiksel işlemler için tüm araçları sağlar.
+
+- Numpy' ın büyük bir kısmı C ile yazlmıştır. Hızlı olmasının sebeplerinden biri.
+
+- (Pyhton işlemleri bu c modüllerinin etrafındaki sarmalayıcılardır)
+
+-  Numpy kurmak için -> Pip ile yapabiliriz.
+
+-  pip install numpy (matplotlib veya pandas da kurabilirsiniz (anaconda conda bunların içinde geliyor))
+
+import numpy as np -> numpy i içe aktarır
+
+print(a.shape) -> kaç tane veri olduğunu söyler
+
+print(a.dtype) -> veri tipini kontrol eder.
+
+prinft(a.ndim) -> Boyut sayısını yazdır.
+
+prinft(a.size) -> Dizinin nokta boyutu
+
+np.array([dizi_sayisi]) -> dizileri oluşturur.
+
+np.sqrt() -> karekök alır.
+
+np.log() -> logaritmik ifadesini alır.
+
+
+
+# dot product
+
+dot = 0
+
+for i in range (len(dosya_ismi)):
+    dot += dosya_ismi[i]
+print(dot) 
+
+BUNUN YERİNE:
+
+dot = np.dot(dosya_ismi,...)
+print(dot)  KULLANIRIZ DAHA KOLAY VE DİĞERİNE GÖRE HANTAL DEĞİL 
+
+sum1 = a1 * a2 
+dot = (a1 * a2).sum()
+print(dot)
+
+- Numpy dizileriyle çalışmanın ve matematiksel işlemler yapmanın genellikle python listelerinden çok daha hızlı olduğunu bilmeliyiz.
+
+- Boyutlu dizilerde en altta (2,3) örneğinde bir ifade varsa 2 satırı 3 sutünu gösterir.
+
+print(a[:,0]) -> tüm satırların istenilen sütunda olmasını sağlar.
+
+print(a[0,:]) -> İlk satırın tamamını yazdırır.
+
+print(a,T) -> Transpoze eder. (Dizinin tersini hesaplama)
+
+-- Eğer numpy lin ark modulü ile yaparsak:
+
+printf(a)
+print(a.shape)
+
+print(np.linalg.inv(a))
+
+print(np.linalg.inv(a))
+
+print(np.linalg.det(a)) -> linux.that  i çağırarak determinant hesaplar. 
+
+print(np.diag) -> Diag ı çağırarak köşegen matris hesaplanır.
+
+bool_idx = ->
+print(bool_idx) -> İndekslemek için kullanılır ([True-False])
+
+even = np.arg where(a%2==0).flatten() -> numpy arc ile bir fonksiyonu kullanarak çift indeksleri elde eder.
+print(x_dizisi[even])
+
+x_dizisi = np.arange(a,b) -> Dizileri yeniden şekillendirir.(Düzvenleme işlevi)
+print(x_dizisi) 
+print(x_dizisi.shape)
+y_dizisi = x_dizisi.((c,d))
+print(y_dizisi.shape)
+
+y_dizisi = x_dizisi[np.newaxis, :] -> Yeni bir eksen eklemek için
+print(y_dizisi)
+
+x_dizisi = np.array([[a,b], [c,d]])-> Elemen eklemeleri eklemek için.
+print(x_dizisi)
+y_dizisi = np.array([[e,f]])
+z_dizisi = np.concatenate((x,y)) -> Dizileri bir araya getirmek için kullanılır.
+print(z_dizisi)
+
+z_dizisi = np.hstack((x,y))-> Dizileri yatak olarak sırayla istifleyecek. 
+print(z_dizisi)
+
+* (vstack te dikey olarak sıralar)
+
+
+print(a.sum(axis=None)) -> nokta toplamı yaparak genel toplamı bulacaktır. 
+(axis=none -> Her sütun için yapacaktır)
+(axis=0) -> Satırlar boyunca hesaplama yapar.
+
+print(a.mean(axis=1)) -> Tüm sütunların ortalamasını hesaplayacaktır.
+
+print(a.var(axis=None)) ->  Veri bilimi fonksiyonları varsaynstır. 
+
+bir dot var çağırarak:
+
+print(a.std(axis=None)) -> Standart sapmayı hesaplar.
+
+print(np.std(a, axis=none))
+
+
+-- print(a.min(axis=None))
+
+print(np.max(a, axis=none)) -> Veri bilimi yaparken minimum ve max değerlere ulaşabilirsiniz.
+
+
+x = np.array([1,2])
+print(x)
+print(x.dtype) -> kaç bitte çalıştığını gösterir.
+
+
+x = np.array([1.0,2.0], dtype=np.int64)   #int64 yerine int32, int8 gibi vs yazabiliriz. int32 = 8bayt veya float16 gibi...
+print(x)
+print(x.dtype) -> veri tipini bulmak için.
+
+
+a = np.array([1,2,3])
+b = a.copy() 
+b[0] = 42
+print(b)
+print(a) -> Gerçek bir kopya oluşturmak için kullanılır.
+
+
+a = np.zeros((2,3))
+print(a) -> Basit bir sıfırlardan oluşan dizi tanımlama kodu.
+
+a = np.ones((2,3))
+print(a) ->  Basit bir birlerden oluşan dizi tanımlama kodu.
+
+a = np.full((2,3), 5.0)
+print(a) -> Tamamı beşlerle dolu bir dizi oluşturur.
+
+
+a = np.eye((2,3))
+print(a) -> Kimlik matrisi elde etmek için.
+
+
+a = np.arange(20)
+print(a) -> Belli bir aralığı elde etmek için.
+
+
+a = np.linspace(0,10,5)
+print(a) -> Başlangıç ve bitiş değerlerini gösteriyor. 
+
+
+a = np.random.random((3,2))
+print(a) -> Rastgele sayılarla eşit aralıklı diziler oluşturmak için kullanılır.
+
+
+mean = 0, and var = 1 # 0-1
+
+
+a = np.random.randn(1000) # normal/Gaussian
+print(a.mean(), a.var()) -> Gauissian veya normal dağılım denklemi vardır. Ortalama 1 vs 0 varsansımız vardır.
+
+
+a = np.random.randint(10,size=(3,2))
+print(a) -> Rastgele tamsayılar üreten bir foniksoyn oluşturur.
+
+
+a = np.random.choice(5, size=10)
+print(a) -> Rastgele bir seçim elde etmek için kullanılır.
+
+
+a = np.random.choice([-8,-7,-6], size=10)
+print(a) -> Bunlardan rastgele elemanlar alır (olası değerler)
+
+a = np.array([[1,2], [3,5]])
+eigenvalues, eigenvectors = np.linalg.eig(a)
+
+print(eigenvalues) -> Eigenvalues (Özdeğer) leri hesaplama yöntemi
+print(iegenvector) #column vector!(Sütun vekötürü) -> Özvektörlerin özvekletörlerini hesaplarken kullanılır.
+
+
+#e_vector + e_val = A * e_vec
+
+b = eigenvectors[:,0] * eigenvalues[0]  
+print(b) -> matris * özvektör denklemini kurarak bunu sağlayabilriz
+
+c = a @ eigenvectors[:,0]  
+print(b) ->  Üstteki komutun aynısı daha kısası
+
+
+#print(b==c) -> [True False] elde edersin sonuçta doğru yol değil aslında
+
+print(np.allclose(b,c)) -> Sonuç şimdi [True] çıkar doğru kodlama böyle olmalı.
+
+
+A = np.array([[[1,1], [1,5,4,0]]]()
+B = np.array([2200,5050])
+
+x = np.linalg.inv(A).dot(b) 
+print(x) -> .Burada tersini kullanarka çözümü bulduk ve tam sağlıklı değil aslında 
+
+
+# np.loadtxt, np.genfromtxt
+data = np.genfromtxt('spambase.csv', delimiter=",", dtype=np.float32)
+print(data.shape) -> Temelde numpy da kullanabileceğimiz iki tane fonskiyon bunlar.
